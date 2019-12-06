@@ -1,5 +1,8 @@
 import React from "react";
+
 import "./App.css";
+
+import Form from "./components/Form";
 
 class App extends React.Component {
   state = { language: "english" };
@@ -22,7 +25,8 @@ class App extends React.Component {
             onClick={() => this.onLanguageChange("greek")}
           />
         </div>
-        {this.state.language}
+
+        <Form />
       </div>
     );
   }
