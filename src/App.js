@@ -4,6 +4,7 @@ import LanguageContext from "./contexts/LanguageContext";
 import "./App.css";
 
 import Form from "./components/Form";
+import LanguageSelector from "./components/LanguageSelector";
 
 class App extends React.Component {
   state = { language: "english" };
@@ -15,17 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <div>
-          Select language{" "}
-          <i
-            className="flag uk"
-            onClick={() => this.onLanguageChange("english")}
-          />
-          <i
-            className="flag gr"
-            onClick={() => this.onLanguageChange("greek")}
-          />
-        </div>
+        <LanguageSelector onLanguageChange={this.onLanguageChange} />
         <LanguageContext.Provider value={this.state.language}>
           <Form />
         </LanguageContext.Provider>
