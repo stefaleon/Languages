@@ -1,4 +1,5 @@
 import React from "react";
+import LanguageContext from "./contexts/LanguageContext";
 
 import "./App.css";
 
@@ -25,8 +26,9 @@ class App extends React.Component {
             onClick={() => this.onLanguageChange("greek")}
           />
         </div>
-
-        <Form />
+        <LanguageContext.Provider value={this.state.language}>
+          <Form />
+        </LanguageContext.Provider>
       </div>
     );
   }
