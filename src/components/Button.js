@@ -6,7 +6,7 @@ class Button extends Component {
     return (
       <button className="ui button primary">
         <LanguageContext.Consumer>
-          {value => (value === "english" ? "Submit" : "Υ  ποβολή")}
+          {value => (value.language === "english" ? "Submit" : "Υποβολή")}
         </LanguageContext.Consumer>
       </button>
     );
